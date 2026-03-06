@@ -1,0 +1,169 @@
+/* =====================
+   RESET & BASE STYLES
+   ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   PAGE BACKGROUND
+   ===================== */
+body {
+  background: #1a1a2e;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =====================
+   CALCULATOR CONTAINER
+   ===================== */
+.calculator {
+  background: #16213e;
+  border-radius: 20px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* =====================
+   DISPLAY SCREEN
+   ===================== */
+.display {
+  background: #0f3460;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Small text showing the previous number + operator */
+.display-history {
+  font-size: 14px;
+  color: #a0aec0;
+  min-height: 20px;
+  margin-bottom: 4px;
+}
+
+/* Main large number on screen */
+.display-current {
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: 300;
+  word-break: break-all;
+  text-align: right;
+  line-height: 1.1;
+}
+
+/* Shrink font when number is too long */
+.display-current.medium { font-size: 30px; }
+.display-current.small  { font-size: 22px; }
+
+/* =====================
+   BUTTON GRID
+   ===================== */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* =====================
+   BASE BUTTON STYLES
+   ===================== */
+.btn {
+  height: 64px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  outline: none;
+}
+
+/* Press effect */
+.btn:active {
+  transform: scale(0.92);
+}
+
+/* =====================
+   NUMBER BUTTONS (0–9, dot)
+   ===================== */
+.btn-number {
+  background: #1a1a2e;
+  color: #ffffff;
+}
+
+.btn-number:hover {
+  background: #252545;
+}
+
+/* =====================
+   SPECIAL BUTTONS (AC, +/-, %)
+   ===================== */
+.btn-special {
+  background: #2d3561;
+  color: #e2e8f0;
+  font-size: 18px;
+}
+
+.btn-special:hover {
+  background: #3a4478;
+}
+
+/* =====================
+   OPERATOR BUTTONS (÷ × − +)
+   ===================== */
+.btn-operator {
+  background: #e94560;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.btn-operator:hover {
+  background: #ff6b81;
+}
+
+/* Active/selected operator gets a lighter shade */
+.btn-operator.active {
+  background: #ff6b81;
+  box-shadow: 0 0 12px rgba(233, 69, 96, 0.5);
+}
+
+/* =====================
+   EQUALS BUTTON
+   ===================== */
+.btn-equals {
+  background: #e94560;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.btn-equals:hover {
+  background: #ff6b81;
+}
+
+/* =====================
+   WIDE ZERO BUTTON
+   ===================== */
+.btn-wide {
+  grid-column: span 2;   /* takes up 2 columns */
+  text-align: left;
+  padding-left: 24px;
+}
+
+/* =====================
+   ERROR STATE
+   ===================== */
+.display-current.error {
+  color: #fc8181;
+  font-size: 26px;
+}

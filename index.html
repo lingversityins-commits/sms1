@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Basic Calculator</title>
+  <!-- Link to our CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="calculator">
+
+    <!-- Display Screen -->
+    <div class="display">
+      <div class="display-history" id="history"></div>
+      <div class="display-current" id="current">0</div>
+    </div>
+
+    <!-- Button Grid -->
+    <div class="buttons">
+
+      <!-- Row 1: AC, +/-, %, divide -->
+      <button class="btn btn-special" onclick="clearAll()">AC</button>
+      <button class="btn btn-special" onclick="toggleSign()">+/−</button>
+      <button class="btn btn-special" onclick="percent()">%</button>
+      <button class="btn btn-operator" onclick="setOperator('/')">÷</button>
+
+      <!-- Row 2: 7 8 9 multiply -->
+      <button class="btn btn-number" onclick="pressDigit('7')">7</button>
+      <button class="btn btn-number" onclick="pressDigit('8')">8</button>
+      <button class="btn btn-number" onclick="pressDigit('9')">9</button>
+      <button class="btn btn-operator" onclick="setOperator('*')">×</button>
+
+      <!-- Row 3: 4 5 6 minus -->
+      <button class="btn btn-number" onclick="pressDigit('4')">4</button>
+      <button class="btn btn-number" onclick="pressDigit('5')">5</button>
+      <button class="btn btn-number" onclick="pressDigit('6')">6</button>
+      <button class="btn btn-operator" onclick="setOperator('-')">−</button>
+
+      <!-- Row 4: 1 2 3 plus -->
+      <button class="btn btn-number" onclick="pressDigit('1')">1</button>
+      <button class="btn btn-number" onclick="pressDigit('2')">2</button>
+      <button class="btn btn-number" onclick="pressDigit('3')">3</button>
+      <button class="btn btn-operator" onclick="setOperator('+')">+</button>
+
+      <!-- Row 5: 0 (wide), dot, equals -->
+      <button class="btn btn-number btn-wide" onclick="pressDigit('0')">0</button>
+      <button class="btn btn-number" onclick="pressDot()">.</button>
+      <button class="btn btn-equals" onclick="calculate()">=</button>
+
+    </div>
+  </div>
+
+  <!-- Link to our JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
